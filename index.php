@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
        <meta charset="utf-8">
-       <title>iNRANET</title>
+       <title>Customized Intranet- IIIT-BH</title>
        <link href="style.css" rel="stylesheet">
        <link href="style_common.css" rel="stylesheet">
 	<link href="style3.css" rel="stylesheet">
