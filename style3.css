@@ -1,0 +1,95 @@
+body {
+	background: #ddd url(../images/strange_bullseyes.jpg) repeat top left;
+}
+
+.mb-style-3 {
+	width: 1000px;
+}
+
+.mb-style-3 .notice{
+	background: #fff;
+	padding: 30px;
+        box-shadow: 0px 3px 10px rgba(124, 112, 112, 0.25);
+}
+
+.mb-style-3 .notice:after, 
+.mb-style-3 .notice:before  {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.mb-style-3 .notice:after  {
+	border-top-color: #ffffff;
+	border-width: 10px;
+	right: 15%;
+	margin-left: -10px;
+}
+
+.mb-style-3 .notice:before {
+	border-top-color: rgba(0,0,0,0.01);
+	border-width: 11px;
+	left: 65%;
+	margin-left: -11px;
+}
+
+
+
+.mb-style-3 .notice a {
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	color: #8D8D8D;
+	font-weight: 400;
+	line-height: 40px;
+	position: relative;
+}
+
+.mb-style-3 .notice a:hover{
+	color: #555;
+}
+.mb-style-3 .mb-attribution {
+	text-align: right;
+	padding: 40px 110px 20px 20px;
+	position: relative;
+}
+
+.mb-style-3 .mb-thumb {
+	display: block;
+	width: 70px;
+	height: 70px;
+	border: 5px solid #fff;
+	border-radius: 50%;
+	background: url(../images/bronte.jpg) no-repeat center center;
+	position: absolute;
+	right: 10px;
+	bottom: 5px;
+	top:10px;
+}
+
+.mb-style-3 .mb-author{
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	color: rgba(8, 109, 148, 0.99);
+	text-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+	
+}
+
+
+
+.mb-style-3 cite a{
+	font-family: 'Alegreya', serif;
+	font-weight: 700;
+	font-style: italic;
+	color: #fff;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+.mb-style-3 cite a:hover{
+	color: rgba(188, 147, 200, 1);
+	text-shadow: 0 1px 1px rgba(255,255,255,0.7);
+}
