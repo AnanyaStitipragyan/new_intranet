@@ -43,7 +43,7 @@ echo '<section class="main">
 			
 				<div class="mb-wrap mb-style-3">
 					<div class="notice">
-						<p><a href="http://hib.ximb.ac.in/Hibiscus/Pub/"'.$post.'</p>
+						<p>'.$post.'</p>
 					</div>
 					<div class="mb-attribution">
 					
