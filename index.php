@@ -46,8 +46,8 @@ echo '<section class="main">
 						<p><a href="http://hib.ximb.ac.in/Hibiscus/Pub/"'.$post.'</p>
 					</div>
 					<div class="mb-attribution">
-					<a href="http://hib.ximb.ac.in/Hibiscus/Pub/"
-						<p class="mb-author">'.$author.'</p></a>
+					
+						<p class="mb-author">'.$author.'</p>
 						<div class="mb-thumb"></div>
 					</div>
 				</div>
