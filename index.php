@@ -26,33 +26,32 @@ echo '<div class="container">';
 $url='http://hib.ximb.ac.in/Hibiscus/Pub/';
 foreach($html->find("tr[class=LOV]") as $post){
 
-$author=$post->find("td[width=20%]",0)->find("font[color=red]",0)->innertext;
-$post->find("td[width=20%]",0)->find("font[color=red]",0)->innertext='';
-$post->find("font[color=blue]",0)->color='#8D8D8D';
-$post->find("font[color=blue]",0)->outertext='';
-$post->find("td[width=80]",0)->outertext='';
-$url_2=$post->find("a[rel=prettyPhoto[pp_gal]]",0)->href;
-$link_url= $url.''. $url_2;
-$post->find("a[rel=prettyPhoto[pp_gal]]",0)->href=$link_url;
-$post->find("a[rel=prettyPhoto[pp_gal]]",0)->target='_blank';
-$post->find("a[href=*]",0)->outertext='';
-
-
-
-echo '<section class="main">
-			
-				<div class="mb-wrap mb-style-3">
-					<div class="notice">
-						<p>'.$post.'</p>
-					</div>
-					<div class="mb-attribution">
-					
-						<p class="mb-author">'.$author.'</p>
-						<div class="mb-thumb"></div>
-					</div>
-				</div>
+	$author=$post->find("td[width=20%]",0)->find("font[color=red]",0)->innertext;
+	$post->find("td[width=20%]",0)->find("font[color=red]",0)->innertext='';
+	$post->find("font[color=blue]",0)->color='#8D8D8D';
+	$post->find("font[color=blue]",0)->outertext='';
+	$post->find("td[width=80]",0)->outertext='';
+	$url_2=$post->find("a[rel=prettyPhoto[pp_gal]]",0)->href;
+	$link_url= $url.''. $url_2;
+	$post->find("a[rel=prettyPhoto[pp_gal]]",0)->href=$link_url;
+	$post->find("a[rel=prettyPhoto[pp_gal]]",0)->target='_blank';
+	$post->find("a[href=*]",0)->outertext='';
+	
+	
+	
+	echo '<section class="main">
 				
-			</section>';
+		<div class="mb-wrap mb-style-3">
+		<div class="notice">
+		<p>'.$post.'</p>
+		</div>
+		<div class="mb-attribution">
+		<p class="mb-author">'.$author.'</p>
+		<div class="mb-thumb"></div>
+		</div>
+		</div>
+					
+	</section>';
 
 
 }
