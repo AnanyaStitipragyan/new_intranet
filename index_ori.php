@@ -26,7 +26,6 @@ $url='http://172.16.1.30/Hibiscus/Pub/';
 foreach($html->find("tr[class=LOV]") as $post){
 
 	$author=$post->find("td[width=20%]",0)->find("font[color=red]",0)->innertext;
-	$title= $post->find("font[color=blue]",0)->innertext;
 	
 	//$attention=$post->find("font[color=blue]",0)->innertext;
 	$post->find("td[width=20%]",0)->find("font[color=red]",0)->innertext='';
@@ -47,15 +46,6 @@ foreach($html->find("tr[class=LOV]") as $post){
 	$desc_url = $link_url;
 	$html_desc = new simple_html_dom();
 	$html_desc->load_file($desc_url);
-	
-	/*************************************** Code for cleaning url to get post num ****************************/
-	$url_clean_iframe=explode('&iframe=true', $link_url); //removes iframe
-	$url_clean_ques=explode('&', $url_clean_iframe[0]); //removes strings after ?
-	$url_clean_post_num=explode('http://172.16.1.30/Hibiscus/Pub/nbDocDet.php?docid=', $url_clean_ques[0]); //gets post number
-	$post_num=$url_clean_post_num[1];
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
-	
 	
 	
 	$deanoff= "Dean&#039;s Office";
@@ -203,13 +193,12 @@ foreach($html->find("tr[class=LOV]") as $post){
 		<div class="mb-wrap mb-style-3">
 		<div class="notice">
 		<p>'.$post.'</p>';
-			
+		
 		
 		foreach($html_desc->find("td[valign=top]") as $desc){
 			
 		echo '<p>'.$desc.'</p>
 		';
-		
 		}
 		
 		echo '</div>
@@ -221,16 +210,11 @@ foreach($html->find("tr[class=LOV]") as $post){
 		</div>
 					
 	</section>';
-	/*********************************************Inserting into the database***********************************/
-	mysql_connect("localhost","root","") or die("connection error");
-	mysql_select_db("newintranet") or die("no such db");
-	$insert_query=mysql_query("INSERT into intranet (Post_num, Title, Desc) values('$post_num', '$title', $desc')");
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
+
 
 }
 echo '</div>';
- 
+
 ?>
 	
   <!--end container-->
