@@ -209,7 +209,7 @@ foreach($html->find("tr[class=LOV]") as $post){
 			
 		echo '<p>'.$desc.'</p>
 		';
-		
+		break;
 		}
 		
 		echo '</div>
@@ -224,7 +224,22 @@ foreach($html->find("tr[class=LOV]") as $post){
 	/*********************************************Inserting into the database***********************************/
 	mysql_connect("localhost","root","") or die("connection error");
 	mysql_select_db("newintranet") or die("no such db");
-	$insert_query=mysql_query("INSERT into intranet (Post_num, Title, Desc) values('$post_num', '$title', $desc')");
+	
+	
+	$check_last_post=mysql_query("SELECT `Post_num` from `intranet` ORDER BY `Post_num` DESC LIMIT 0,1") or die("Error in checking last post");
+	$last_post_num=mysql_fetch_array($check_last_post);
+	//echo $last_post_num[0];
+	$check_for_duplicate=mysql_query("SELECT `Post_num` from `intranet` WHERE `Post_num`='$post_num'") or die("Error in post duplicate");
+	if(mysql_num_rows($check_for_duplicate)>0){
+		$post_duplicate=1;
+	}
+	else $post_duplicate=0;
+	if($post_num > $last_post_num[0] && $post_duplicate==0){
+		$insert_query=mysql_query("INSERT into intranet (Post_num, Title) values('$post_num', '$title')");
+		
+	}
+	
+	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 
